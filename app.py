@@ -44,12 +44,12 @@ def gradio_predict(text):
     
     return f"""### 🎯 РЕЗУЛЬТАТ NIR_PHISHING v3.2 (F1=0.849)
 
-**📱 SMS:** `{text[:100]}{'...' if len(text) > 100 else ''}`
+📱 SMS: `{text[:100]}{'...' if len(text) > 100 else ''}`
 
-**🚨 Предсказание:** {prediction}  
-**💯 Уверенность:** {confidence:.1%}
+🚨 Предсказание: {prediction}  
+💯 Уверенность: {confidence:.1%}
 
-**📊 Детали вероятностей:**
+*📊 Детали вероятностей:*
 {probs_md}
 """
 
