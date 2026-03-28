@@ -14,14 +14,14 @@ def gradio_predict(text):
     prediction = max(result, key=result.get)
     confidence = max(result.values())
     
-    return f"""🎯 **РЕЗУЛЬТАТ NIR_PHISHING v3.2 (F1=0.849)**
+    return f"""🎯 РЕЗУЛЬТАТ NIR_PHISHING v3.2 (F1=0.849)
 
-📱 **SMS**: `{text[:60]}{'...' if len(text) > 60 else ''}`
+📱 SMS: `{text[:60]}{'...' if len(text) > 60 else ''}`
 
-🚨 **Предсказание**: {prediction}  
-💯 **Уверенность**: {confidence:.1%}
+🚨 Предсказание: {prediction}  
+💯 Уверенность: {confidence:.1%}
 
-📊 **Вероятности**:  
+📊 Вероятности:  
 {chr(10).join([f'{k}: {v}' for k, v in result.items()])}"""
 
 demo = gr.Interface(
@@ -33,13 +33,13 @@ demo = gr.Interface(
     ),
     outputs=gr.Markdown(),
     title="🚨 NIR_PHISHING Detector v3.2",
-    description="""**НИР МИСиС 2026 | Ana Bee**
+    description="""НИР МИСИС 2026 | Ana B
 
-F1_macro=**0.849** | RuBERT-tiny + BiLSTM | Детектор фишинга/фейков/реальных SMS
+F1_macro=0.849 | RuBERT-tiny + BiLSTM | Детектор фишинга/фейков/реальных SMS
 
-**Точность по классам:**
-- PHISHING: **99.5%**
-- REAL/FAKE: **~84%**""",
+Точность по классам:
+- PHISHING: 99.5%
+- REAL/FAKE: ~84%""",
     examples=[
         ["BTC x10! Депозит 1000$ → 10k! t.me/wallet"],
         ["Сбербанк: подтвердите данные для вывода 5000₽"],
