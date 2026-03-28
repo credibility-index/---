@@ -36,15 +36,13 @@ result = nir_phishing_predict("BTC x10! Вложи 1000$ → 10k!")
 # → {'✅ REAL': 0.01, '❌ FAKE': 0.02, '🚨 PHISHING': 0.97}
 ```
 
-# 📁 Структура проекта
-Разработка фишинг модели (RUBert + LSTM)
+📁 Структура проекта
 NIR_phishing_detector/
-├── nir_model.py # Модель + predict
-├── app.py # Gradio UI
-├── NIR_phishing_v3.2_best_F1_0.849.pth # Твоя модель!
-├── requirements.txt
-├── README.md
-└── LICENSE # MIT
+├── nir_model.py      # Архитектура модели + логика загрузки с HF
+├── app.py            # Интерфейс Gradio
+├── requirements.txt  # Зависимости 
+├── README.md         # Инструкция
+└── LICENSE           # MIT
 
 # 🚨 NIR_PHISHING Detector v3.2 (F1=0.849)
 
@@ -56,6 +54,10 @@ NIR_phishing_detector/
 Веса модели (48MB) размещены в официальном репозитории:
 👉 [jesthy/NIR_phishing_v3.2](https://huggingface.co/jesthy/NIR_phishing_v3.2)
 *Файл загружается автоматически при первом запуске через `huggingface_hub`.*
+# 🚀 Быстрый старт
+1. Установи зависимости: `pip install -r requirements.txt`
+2. Запусти: `python app.py`
+*При первом запуске веса модели (48МБ) будут автоматически скачаны с Hugging Face.*
 # 🎓 НИР МИСИС 2026
 **Ana B** | Институт Компьютерных Наук | Наука о данных | Защита: июнь 2026
 
